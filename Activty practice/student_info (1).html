@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<script type="text/javascript">
+	class sameInfo {
+		university(){
+			document.write("From President Ramon Magsaysay Technological University");
+		}
+		college(){
+			document.write("Under the College of Communication and Information Technology<br>");
+		}
+	}
+	
+	class BSCS {
+		constructor(){
+			this.push = new sameInfo();
+		}
+		convert() {
+			document.write("A BSCS Student<br>");
+			return true;
+		}
+	}
+		
+	class BSIT {
+		constructor(){
+			this.push = new sameInfo();
+		}
+		convert() {
+			document.write("A BSIT Student<br>");
+			return true;
+		}
+	}
+	let info = prompt("Enter name:");
+	if(info == "Maria"){
+		document.write("Hi! I am Maria<br>");
+		var c1 = new BSIT();
+		c1.convert();
+		c1.push.college();
+		c1.push.university();
+	} else if(info == "Ibarra"){
+		document.write("Hi! I am Ibarra<br>");
+		var c1 = new BSCS();
+		c1.convert();
+		c1.push.college();
+		c1.push.university();
+	} else {
+		document.write("Unknown student...");
+	}
+</script>
+<body>
+<!--
+Another sample of composition.
+-This program is capable to take the name of a certain student and print out its information.
+-This program only contain 2 information for "Maria" and for "Ibarra".
+-Maria is a BSIT student and Ibarra is a BSCS student.
+-Now, we know that BSIT and BSCS if both under CCIT and CCIT is 1 of the colleges in PRMSU.
+-So, if we want to print out the information of Maria or Ibarra why not create an object that will hold the information for the college and the university and using composition we will just grab those information to be printed which ever information to show.
+-There are a total of 3 objects in this sample program 1."sameInfo" this object will hold the college and university information, 2."BSCS" this object will hold uniq method or information just for BSCS students, 3."BSIT this object will hold uniq method or information just for BSIT students"
+-->
+</body>
+</html>

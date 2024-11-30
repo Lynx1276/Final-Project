@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function userlog(){
+       function  getData(){
+        this.username = document.getElementById("username").value;
+        this.password = document.getElementById("password").value;
+        var link = new log(username, password);
+        link.userLogIn();
+       }
+       function log(username, password){
+        this.username = username;
+        this.password = password;
+        this.userLogIn = function(){
+            if(username == "bsinfotech" && password == "it"){
+                document.getElementById("display").innerHTML = "welcome";
+            }
+            else {
+                alert("warning")
+            }
+        }
+       }
+       return getData();
+    }
+</script>
+<body>
+    <h1 id="display"></h1>
+    <input type="text" name="" id="username">
+    <input type="text" name="" id="password">
+    <button onclick="userlog();">Log In</button>
+</body>
+</html>

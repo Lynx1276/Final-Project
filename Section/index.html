@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #f, #s, #t {
+        display: none;
+    }
+</style>
+
+<script>
+    //Button function
+    function my_firstsec(){
+        let identify = document.getElementById("identify").innerHTML = "First section";
+        document.getElementById('f').style.display = "block";
+        document.getElementById('s').style.display = "none";
+        document.getElementById('t').style.display = "none";
+    }
+
+    function my_secondsec(){
+        let identify = document.getElementById("identify").innerHTML = "Second section";
+        document.getElementById('f').style.display = "none";
+        document.getElementById('s').style.display = "block";
+        document.getElementById('t').style.display = "none";
+    }
+
+    function my_thirdsec(){
+        let identify = document.getElementById("identify").innerHTML = "Third section";
+        document.getElementById('f').style.display = "none";
+        document.getElementById('s').style.display = "none";
+        document.getElementById('t').style.display = "block";
+    }
+
+    //Parent function
+    function Student(name, grade){
+        this.name = name;
+        this.grade = grade;
+    }
+
+    Student.prototype.getName = function(){
+        document.getElementById("display").innerHTML = "My name is " + this.name;
+    };
+
+    Student.prototype.getGrade = function(){
+        document.getElementById("display").innerHTML = "My grade is " + this.grade;
+    };
+
+    function First(name, grade){
+        Student.call(this, name, grade);
+    };
+
+    function Second(name, grade){
+        Student.call(this, name, grade);
+    };
+
+    function Third(name, grade){
+        Student.call(this, name, grade);
+    };
+
+    First.prototype = Object.create(Student.prototype);
+    Second.prototype = Object.create(Student.prototype);
+    Third.prototype = Object.create(Student.prototype);
+
+    const myFirst = new First("Alec", "2A");
+    const mySecond = new Second("Ferl", "2B");
+    const myThird = new Third("Angel", "2C");
+</script>
+<body>
+    <h1 id="identify"></h1>
+    <h3 id="display"></h3>
+    <button onclick="my_firstsec();">First section</button>
+    <button onclick="my_secondsec();">Second section</button>
+    <button onclick="my_thirdsec();">Thrid section</button>
+
+    <div id="f">
+        <button onclick="myFirst.getName();">What is class name?</button>
+        <button onclick="myFirst.getGrade();">What is your grade?</button>
+    </div>
+
+    <div id="s">
+        <button onclick="mySecond.getName();">What is class name?</button>
+        <button onclick="mySecond.getGrade();">What is your grade?</button>
+    </div>
+
+    <div id="t">
+        <button onclick="myThird.getName();">What is class name?</button>
+        <button onclick="myThird.getGrade();">What is your grade?</button>
+    </div>
+</body>
+</html>

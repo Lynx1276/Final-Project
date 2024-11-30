@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 10 auto;
+    border: 1px solid;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container button {
+    padding: 10px;
+    width: 40%;
+    background: blue;
+    color: white;
+    border-radius: 10px;
+}
+
+#dog, #cat {
+    display: none;
+}

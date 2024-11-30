@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class sameInfo{
+        university(){
+            document.write("PRMSU<br>");
+        }
+        college(){
+            document.write("CCIT");
+        }
+    }
+
+    class BSINFOTECH{
+        constructor(){
+            this.push = new sameInfo;
+        }
+        convert(){
+            document.write("im a BSINFOTECH student<br>");
+            return true;
+        }
+    }
+
+    class BSCS{
+        constructor(){
+            this.push = new sameInfo;
+        }
+        convert(){
+            document.write("Im a BSCS student<br>");
+            return true;
+        }
+    }
+
+
+    //
+    const student_name = prompt("Enter your name");
+    if(student_name == "Julse"){
+        document.write("Hi, I am Julse<br>");
+        var c1 = new BSINFOTECH();
+        c1.convert();
+        c1.push.university();
+        c1.push.college();
+
+    }
+    else if(student_name == "Angel"){
+        document.write("Hi, I am Angel<br>");
+        var c1 = new BSCS();
+        c1.convert();
+        c1.push.university();
+        c1.push.college();
+    }
+</script>
+<body>
+    
+</body>
+</html>

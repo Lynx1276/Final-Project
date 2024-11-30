@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript">
+function login(username, password){
+    this.userName = username;
+    this.passWord = passWord;
+    this.userlogin = function(){
+        if(this.username == "BSIT2A" && this.passWord == "OOP"){
+            document.getElementById("showName").innerHTML = "Valid User";
+        }
+    }
+}
+function getUser(){
+    let userName = document.getElementById("EnterName").value;
+    let password = document.getElementById("enterPassword").value;
+    var link = new login(username, password);
+    link.userlogin();
+}
+</script>
+<body>
+    <h1 id = "showName"></h1>
+    <input type="text" name="" id="enterUname" placeholder="Enter Username">
+    <input type="text" name="" id="enterPassword" placeholder="Enter Password">
+    <button onvlick = "getUser();">ENTER</button>
+</body>
+</html>

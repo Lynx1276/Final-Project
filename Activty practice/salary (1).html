@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<script type="text/javascript">
+	class salaryPerDay {
+		salary(daysPresent,dailySalary){
+			console.log(dailySalary)
+		}
+	}
+	class totalSalary extends salaryPerDay {
+		salary(daysPresent,dailySalary){
+			console.log(daysPresent*dailySalary)
+		}
+	}
+	class totalBonus extends totalSalary {
+		salary(daysPresent,dailySalary){
+			const totalSalary = daysPresent * dailySalary;
+			console.log(((totalSalary)*0.20)+totalSalary);
+		}
+	}
+	let ob = new salaryPerDay();
+	let ob2 = new totalSalary();
+	let ob3 = new totalBonus();
+
+	const presentDays = parseInt(prompt("Enter days of work:"));
+	const salaryDay = parseInt(prompt("Enter salary per day: "));
+</script>
+<body>
+<!--
+This is another example of polymorphism.
+This is a modified version of the 1st sample on our lecture.
+This goal of this program is to compute the total salary of an employee base on how many days he/she go to works and his daily salary. The program also can show the assuming bonus of an employee (NOTE: The computation in this program is fictional.)
+-1st the program will get information from the user namely presentDays(how many days the employee go to works) and salaryDays(assuming daily salary of the employee)
+-Thos information will now be trown to our 3 objects namely "salaryPerDay" this object will show the daily salary of an employee, "totalSalary" this object will show the total salary of an employee, and "totalBonus" this object will show the bonus of an employee base on its total salary multiplied by 20%
+-Note that the output is in console and will only apear once you press this 3 button bellow
+-->
+<button onclick="ob.salary(presentDays,salaryDay);">VIEW SALARY PER DAY</button>
+<button onclick="ob2.salary(presentDays,salaryDay);">TOTAL SALARY</button>
+<button onclick="ob3.salary(presentDays,salaryDay);">BONUS</button>
+</body>
+</html>

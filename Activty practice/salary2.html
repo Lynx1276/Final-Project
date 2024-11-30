@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    class perDaySalary{
+        salary(presentDays,salaryPerDay){
+            document.getElementById("display").innerHTML = presentDays;
+        }
+    }
+
+    class totalSalary extends perDaySalary{
+        salary(presentDays,salaryPerDay){
+            document.getElementById("display").innerHTML = presentDays * salaryPerDay;
+        }
+    }
+
+    class bunos extends totalSalary{
+        salary(presentDays,salaryPerDay){
+            const totalSalary = presentDays * salaryPerDay;
+            document.getElementById("display").innerHTML = ((totalSalary)*0.20)+totalSalary;
+        }
+    }
+
+
+    //
+    let info = new perDaySalary;
+    let info1 = new totalSalary;
+    let info2 = new bunos;
+
+    //Constratctror
+    const presentDays = parseInt(prompt("How many days are you present: "));
+    const salaryPerDay = parseInt(prompt("How much your salary per day: "));
+</script>
+<body>
+   <h1 id="display"></h1>
+   <buttton onclick="info.salary(presentDays,salaryPerDay);">View salary per day</buttton>
+   <buttton onclick="info1.salary(presentDays,salaryPerDay);">Total Salary</buttton>
+   <buttton onclick="info2.salary(presentDays,salaryPerDay);">Bonus</buttton>
+</body>
+</html>
